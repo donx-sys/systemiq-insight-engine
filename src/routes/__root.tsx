@@ -29,11 +29,11 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "SystemIQ — Real-Time Application Monitoring & Crash Intelligence" },
+      { name: "description", content: "Unified observability for modern applications. Sessions, telemetry, crash tracing, infrastructure and live alerts." },
+      { name: "author", content: "SystemIQ" },
+      { property: "og:title", content: "SystemIQ — Application Performance & Crash Intelligence" },
+      { property: "og:description", content: "Unified observability platform for engineering teams." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
@@ -54,6 +54,12 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..900&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        />
         <HeadContent />
       </head>
       <body>

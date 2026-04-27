@@ -9,8 +9,80 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SqlInsightsRouteImport } from './routes/sql-insights'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SessionsRouteImport } from './routes/sessions'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as InfrastructureRouteImport } from './routes/infrastructure'
+import { Route as DeploymentsRouteImport } from './routes/deployments'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as CrashAnalyticsRouteImport } from './routes/crash-analytics'
+import { Route as ApplicationsRouteImport } from './routes/applications'
+import { Route as ApiMonitoringRouteImport } from './routes/api-monitoring'
+import { Route as AlertsRouteImport } from './routes/alerts'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SqlInsightsRoute = SqlInsightsRouteImport.update({
+  id: '/sql-insights',
+  path: '/sql-insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SessionsRoute = SessionsRouteImport.update({
+  id: '/sessions',
+  path: '/sessions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InfrastructureRoute = InfrastructureRouteImport.update({
+  id: '/infrastructure',
+  path: '/infrastructure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeploymentsRoute = DeploymentsRouteImport.update({
+  id: '/deployments',
+  path: '/deployments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CrashAnalyticsRoute = CrashAnalyticsRouteImport.update({
+  id: '/crash-analytics',
+  path: '/crash-analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApplicationsRoute = ApplicationsRouteImport.update({
+  id: '/applications',
+  path: '/applications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMonitoringRoute = ApiMonitoringRouteImport.update({
+  id: '/api-monitoring',
+  path: '/api-monitoring',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlertsRoute = AlertsRouteImport.update({
+  id: '/alerts',
+  path: '/alerts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +91,200 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
+  '/api-monitoring': typeof ApiMonitoringRoute
+  '/applications': typeof ApplicationsRoute
+  '/crash-analytics': typeof CrashAnalyticsRoute
+  '/dashboard': typeof DashboardRoute
+  '/deployments': typeof DeploymentsRoute
+  '/infrastructure': typeof InfrastructureRoute
+  '/login': typeof LoginRoute
+  '/reports': typeof ReportsRoute
+  '/sessions': typeof SessionsRoute
+  '/settings': typeof SettingsRoute
+  '/sql-insights': typeof SqlInsightsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
+  '/api-monitoring': typeof ApiMonitoringRoute
+  '/applications': typeof ApplicationsRoute
+  '/crash-analytics': typeof CrashAnalyticsRoute
+  '/dashboard': typeof DashboardRoute
+  '/deployments': typeof DeploymentsRoute
+  '/infrastructure': typeof InfrastructureRoute
+  '/login': typeof LoginRoute
+  '/reports': typeof ReportsRoute
+  '/sessions': typeof SessionsRoute
+  '/settings': typeof SettingsRoute
+  '/sql-insights': typeof SqlInsightsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
+  '/api-monitoring': typeof ApiMonitoringRoute
+  '/applications': typeof ApplicationsRoute
+  '/crash-analytics': typeof CrashAnalyticsRoute
+  '/dashboard': typeof DashboardRoute
+  '/deployments': typeof DeploymentsRoute
+  '/infrastructure': typeof InfrastructureRoute
+  '/login': typeof LoginRoute
+  '/reports': typeof ReportsRoute
+  '/sessions': typeof SessionsRoute
+  '/settings': typeof SettingsRoute
+  '/sql-insights': typeof SqlInsightsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/alerts'
+    | '/api-monitoring'
+    | '/applications'
+    | '/crash-analytics'
+    | '/dashboard'
+    | '/deployments'
+    | '/infrastructure'
+    | '/login'
+    | '/reports'
+    | '/sessions'
+    | '/settings'
+    | '/sql-insights'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/alerts'
+    | '/api-monitoring'
+    | '/applications'
+    | '/crash-analytics'
+    | '/dashboard'
+    | '/deployments'
+    | '/infrastructure'
+    | '/login'
+    | '/reports'
+    | '/sessions'
+    | '/settings'
+    | '/sql-insights'
+  id:
+    | '__root__'
+    | '/'
+    | '/alerts'
+    | '/api-monitoring'
+    | '/applications'
+    | '/crash-analytics'
+    | '/dashboard'
+    | '/deployments'
+    | '/infrastructure'
+    | '/login'
+    | '/reports'
+    | '/sessions'
+    | '/settings'
+    | '/sql-insights'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlertsRoute: typeof AlertsRoute
+  ApiMonitoringRoute: typeof ApiMonitoringRoute
+  ApplicationsRoute: typeof ApplicationsRoute
+  CrashAnalyticsRoute: typeof CrashAnalyticsRoute
+  DashboardRoute: typeof DashboardRoute
+  DeploymentsRoute: typeof DeploymentsRoute
+  InfrastructureRoute: typeof InfrastructureRoute
+  LoginRoute: typeof LoginRoute
+  ReportsRoute: typeof ReportsRoute
+  SessionsRoute: typeof SessionsRoute
+  SettingsRoute: typeof SettingsRoute
+  SqlInsightsRoute: typeof SqlInsightsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sql-insights': {
+      id: '/sql-insights'
+      path: '/sql-insights'
+      fullPath: '/sql-insights'
+      preLoaderRoute: typeof SqlInsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sessions': {
+      id: '/sessions'
+      path: '/sessions'
+      fullPath: '/sessions'
+      preLoaderRoute: typeof SessionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/infrastructure': {
+      id: '/infrastructure'
+      path: '/infrastructure'
+      fullPath: '/infrastructure'
+      preLoaderRoute: typeof InfrastructureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/deployments': {
+      id: '/deployments'
+      path: '/deployments'
+      fullPath: '/deployments'
+      preLoaderRoute: typeof DeploymentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/crash-analytics': {
+      id: '/crash-analytics'
+      path: '/crash-analytics'
+      fullPath: '/crash-analytics'
+      preLoaderRoute: typeof CrashAnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/applications': {
+      id: '/applications'
+      path: '/applications'
+      fullPath: '/applications'
+      preLoaderRoute: typeof ApplicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api-monitoring': {
+      id: '/api-monitoring'
+      path: '/api-monitoring'
+      fullPath: '/api-monitoring'
+      preLoaderRoute: typeof ApiMonitoringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alerts': {
+      id: '/alerts'
+      path: '/alerts'
+      fullPath: '/alerts'
+      preLoaderRoute: typeof AlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +297,18 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlertsRoute: AlertsRoute,
+  ApiMonitoringRoute: ApiMonitoringRoute,
+  ApplicationsRoute: ApplicationsRoute,
+  CrashAnalyticsRoute: CrashAnalyticsRoute,
+  DashboardRoute: DashboardRoute,
+  DeploymentsRoute: DeploymentsRoute,
+  InfrastructureRoute: InfrastructureRoute,
+  LoginRoute: LoginRoute,
+  ReportsRoute: ReportsRoute,
+  SessionsRoute: SessionsRoute,
+  SettingsRoute: SettingsRoute,
+  SqlInsightsRoute: SqlInsightsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
